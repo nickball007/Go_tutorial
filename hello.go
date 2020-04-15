@@ -2,19 +2,16 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
-func swap(x, y string) (string, string) {
-	return y, x
-}
-
-func split(sum int) (x, y int) {
-	x = sum * 4 / 9
-	y = sum - x
-	return
+func f(n int) {
+	for i := 0; i < 10; i++ {
+		fmt.Println(n, ":", i)
+	}
 }
 
 func main() {
-	fmt.Println(swap("42", "4"))
-	fmt.Println(split(17))
+	go f(0)
+	time.Sleep(time.Second / 1)
 }
