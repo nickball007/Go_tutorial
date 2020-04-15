@@ -2,16 +2,12 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
-func f(n int) {
-	for i := 0; i < 10; i++ {
-		fmt.Println(n, ":", i)
-	}
-}
-
 func main() {
-	go f(0)
-	time.Sleep(time.Second / 1)
+	messages := make(chan string)
+	go func() { messages <- "ping" }()
+
+	msg := <-messages
+	fmt.Println(msg)
 }
