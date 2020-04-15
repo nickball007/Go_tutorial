@@ -4,12 +4,17 @@ import (
 	"fmt"
 )
 
+func swap(x, y string) (string, string) {
+	return y, x
+}
+
+func split(sum int) (x, y int) {
+	x = sum * 4 / 9
+	y = sum - x
+	return
+}
+
 func main() {
-	x := make(map[string]string)
-
-	x["key"] = "hehe"
-	fmt.Println(x["jj"])
-
-	name, ok := x["Al"]
-	fmt.Println(name, ok)
+	fmt.Println(swap("42", "4"))
+	fmt.Println(split(17))
 }
